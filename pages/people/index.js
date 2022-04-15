@@ -1,6 +1,13 @@
+import Header from "../../components/Layout/Header"
+import Body from "../../components/Layout/Body"
 const people = () => {
     return (
-        <h1>this is people page</h1>
+        <>
+            <Header Loggedin={true} />
+            <Body>
+                This is People
+            </Body>
+        </>
     )
 }
 

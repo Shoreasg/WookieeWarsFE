@@ -1,6 +1,13 @@
+import Body from "../../components/Layout/Body"
+import Header from "../../components/Layout/Header"
 const flims = () => {
     return (
-        <h1>this is flims page</h1>
+        <>
+            <Header Loggedin={true} />
+            <Body>
+                This is Flims
+            </Body>
+        </>
     )
 }
 

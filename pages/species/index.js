@@ -1,6 +1,14 @@
+import Body from "../../components/Layout/Body"
+import Header from "../../components/Layout/Header"
+
 const species = () => {
     return (
-        <h1>this is species page</h1>
+        <>
+            <Header Loggedin={true} />
+            <Body>
+                This is species
+            </Body>
+        </>
     )
 }
 

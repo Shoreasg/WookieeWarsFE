@@ -1,8 +1,14 @@
+import { Box, Center, Flex } from "@chakra-ui/react";
+import Form from "../components/Form";
+
+
+
 export default function Home() {
   return (
     <>
-       <h1>This is the login page</h1>
+      <Center bg='black' h='100vh' color='gold'>
+       <Form/>
+      </Center>
     </>
- 
   )
 }

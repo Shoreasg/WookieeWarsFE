@@ -1,6 +1,14 @@
+import Body from "../../components/Layout/Body"
+import Header from "../../components/Layout/Header"
+
 const planets = () => {
     return (
-        <h1>this is planets page</h1>
+        <>
+            <Header Loggedin={true} />
+            <Body>
+                This is planets
+            </Body>
+        </>
     )
 }
 
