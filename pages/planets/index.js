@@ -1,7 +1,7 @@
 import Body from "../../components/Layout/Body"
 import Header from "../../components/Layout/Header"
 
-const planets = () => {
+const Planets = () => {
     return (
         <>
             <Header Loggedin={true} />
@@ -12,4 +12,4 @@ const planets = () => {
     )
 }
 
-export default planets
+export default Planets

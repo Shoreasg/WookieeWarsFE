@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 import Header from "../../../components/Layout/Header"
 import Body from "../../../components/Layout/Body"
 
-const person = () => {
+const Person = () => {
     const router = useRouter()
     const { id } = router.query
     return (
@@ -16,4 +16,4 @@ const person = () => {
     )
 }
 
-export default person
+export default Person

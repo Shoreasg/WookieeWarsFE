@@ -2,7 +2,7 @@ import { useRouter } from "next/router"
 import Body from "../../../components/Layout/Body"
 import Header from "../../../components/Layout/Header"
 
-const starship = () => {
+const Starship = () => {
     const router = useRouter()
     const { id } = router.query
     return (
@@ -15,4 +15,4 @@ const starship = () => {
     )
 }
 
-export default starship
+export default Starship

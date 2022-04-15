@@ -1,6 +1,6 @@
 import Body from "../../components/Layout/Body"
 import Header from "../../components/Layout/Header"
-const flims = () => {
+const Flims = () => {
     return (
         <>
             <Header Loggedin={true} />
@@ -11,4 +11,4 @@ const flims = () => {
     )
 }
 
-export default flims
+export default Flims
