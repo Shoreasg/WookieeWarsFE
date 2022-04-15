@@ -19,7 +19,7 @@ const Form = () => {
                         isClosable: true,
                     })
                     router.push('/welcome');
-                    
+
                 }
                 else {
                     toast({
