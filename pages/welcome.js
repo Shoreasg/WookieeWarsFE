@@ -1,13 +1,16 @@
-import { Center } from "@chakra-ui/react"
+import { Box } from "@chakra-ui/react"
+import CategoryCards from "../components/WelcomePage/CategoryCards"
 import Header from "../components/Layout/Header"
+import WelcomeText from "../components/WelcomePage/WelcomeText"
 
 const Welcome = () => {
     return (
         <>
             <Header Loggedin={true} />
-            <Center bg='black' h='100vh' color='gold'>
-                Welcome
-            </Center>
+            <Box bg='black' h='100vh' color='gold' >
+              <WelcomeText/>
+              <CategoryCards/>
+            </Box>
         </>
     )
 
