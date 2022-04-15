@@ -1,7 +1,7 @@
 import Body from "../../components/Layout/Body"
 import Header from "../../components/Layout/Header"
 
-const starships = () => {
+const Starships = () => {
     return (
         <>
             <Header Loggedin={true} />
@@ -12,4 +12,4 @@ const starships = () => {
     )
 }
 
-export default starships
+export default Starships

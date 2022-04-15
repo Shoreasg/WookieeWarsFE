@@ -1,7 +1,7 @@
 import Body from "../../components/Layout/Body"
 import Header from "../../components/Layout/Header"
 
-const vehicles = () => {
+const Vehicles = () => {
     return (
         <>
             <Header Loggedin={true} />
@@ -12,4 +12,4 @@ const vehicles = () => {
     )
 }
 
-export default vehicles
+export default Vehicles

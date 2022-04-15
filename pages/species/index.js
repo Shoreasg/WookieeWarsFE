@@ -1,7 +1,7 @@
 import Body from "../../components/Layout/Body"
 import Header from "../../components/Layout/Header"
 
-const species = () => {
+const Species = () => {
     return (
         <>
             <Header Loggedin={true} />
@@ -12,4 +12,4 @@ const species = () => {
     )
 }
 
-export default species
+export default Species
