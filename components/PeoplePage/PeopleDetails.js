@@ -1,29 +1,32 @@
 
 import { Box, Center, Text } from "@chakra-ui/react";
-const FilmDetails = ({ filmDetails }) => {
+const PeopleDetails = ({ peopleDetails }) => {
 
-    const details = filmDetails.map((data) => {
+    const details = peopleDetails.map((data) => {
         return (
             <>
                 <Text fontSize="2xl">
-                    Title: {data.title}
+                    Name: {data.name}
                 </Text>
                 <Text fontSize="xl">
-                    Episode: {data.episode_id}
+                    Gender: {data.gender}
                 </Text>
                 <Text fontSize="xl">
-                    Director: {data.director}
+                    Birth Year: {data.birth_year}
                 </Text>
                 <Text fontSize="xl">
-                    Producer:{data.producer}
+                    Eye Color: {data.eye_color}
                 </Text>
                 <Text fontSize="xl">
-                    Release Date:{data.release_date}
+                    Height: {data.height} CM
                 </Text>
-                <Text fontSize="lg">
-                    Synopsis
-                    <p>{data.opening_crawl}</p>
+                <Text fontSize="xl">
+                    Skin Color: {data.skin_color}
                 </Text>
+                <Text fontSize="xl">
+                    Mass: {data.mass} KG
+                </Text>
+
             </>
         )
     })
@@ -38,4 +41,4 @@ const FilmDetails = ({ filmDetails }) => {
     )
 }
 
-export default FilmDetails
+export default PeopleDetails
