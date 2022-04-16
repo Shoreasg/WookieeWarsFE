@@ -15,10 +15,15 @@ const StarShipsCard = () => {
     const pageCount = Math.ceil(getStarShips.length / PER_PAGE);
 
     useEffect(() => {
-        const starship = () => {
-            axios.get(`${process.env.NEXT_PUBLIC_SWAPI_URL}/starships/`)
+        const starship = (page = 1, previousArray = []) => {
+            axios.get(`${process.env.NEXT_PUBLIC_SWAPI_URL}/starships/?page=${page}`)
                 .then((res) => {
-                    setGetStarShips(res.data.results)
+                   const response = [...previousArray,...res.data.results]
+                    if (res.data.next) {
+                        page++
+                        return starship(page, response)
+                    }
+                    return setGetStarShips(response);
                 })
         }
         starship()
@@ -30,7 +35,7 @@ const StarShipsCard = () => {
 
     const getStarShipsResult = getStarShips.slice(offset, offset + PER_PAGE).map((data, index) => {
         return <Center key={index}>
-            <Link href={`/starships/${data.name}`}>
+            <Link href={`/starships/${encodeURIComponent(data.name)}`}>
                 <Button w='80%' h="100px" borderWidth='1px' borderRadius='lg' colorScheme="yellow" >
                     {data.name}
                 </Button>

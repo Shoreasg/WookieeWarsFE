@@ -15,10 +15,15 @@ const PeopleCard = () => {
     const pageCount = Math.ceil(getPeople.length / PER_PAGE);
 
     useEffect(() => {
-        const people = () => {
-            axios.get(`${process.env.NEXT_PUBLIC_SWAPI_URL}/people/`)
+        const people = (page = 1, previousArray = []) => {
+            axios.get(`${process.env.NEXT_PUBLIC_SWAPI_URL}/people/?page=${page}`)
                 .then((res) => {
-                    setGetPeople(res.data.results)
+                   const response = [...previousArray,...res.data.results]
+                    if (res.data.next) {
+                        page++
+                        return people(page, response)
+                    }
+                    return setGetPeople(response);
                 })
         }
         people()
@@ -30,7 +35,7 @@ const PeopleCard = () => {
 
     const getPeopleResult = getPeople.slice(offset, offset + PER_PAGE).map((data, index) => {
         return <Center key={index}>
-            <Link href={`/people/${data.name}`}>
+            <Link href={`/people/${encodeURIComponent(data.name)}`}>
                 <Button w='80%' h="100px" borderWidth='1px' borderRadius='lg' colorScheme="yellow" >
                     {data.name}
                 </Button>
