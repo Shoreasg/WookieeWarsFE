@@ -1,7 +1,7 @@
 
 import { Box, Center, Text } from "@chakra-ui/react";
-const StarShipDetails = ({ StarShipDetails }) => {
-    const details = StarShipDetails.map((data, index) => {
+const StarShipDetails = ({ starShipDetails }) => {
+    const details = starShipDetails.map((data, index) => {
         return (
             <Box key={index}>
                 <Text fontSize="2xl" >

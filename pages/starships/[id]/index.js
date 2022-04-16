@@ -26,7 +26,7 @@ const StarShip = () => {
         <>
             <Header Loggedin={true} />
             <Body>
-                <StarShipDetails StarShipDetails={getStarShipDetails} />
+                <StarShipDetails starShipDetails={getStarShipDetails} />
                 <BackButton backTo={"starships"} />
             </Body>
 
