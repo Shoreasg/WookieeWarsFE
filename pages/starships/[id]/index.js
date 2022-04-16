@@ -5,7 +5,6 @@ import Body from "../../../components/Layout/Body"
 import Header from "../../../components/Layout/Header"
 import BackButton from "../../../components/BackButton"
 import StarShipDetails from "../../../components/StarShipsPage/StarShipDetails"
-
 const StarShip = () => {
     const [getStarShipsDetails, setGetStarShipsDetails] = useState([]);
     const router = useRouter()
