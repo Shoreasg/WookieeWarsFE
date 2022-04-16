@@ -18,7 +18,7 @@ const VehiclesCard = () => {
         const vehicle = (page = 1, previousArray = []) => {
             axios.get(`${process.env.NEXT_PUBLIC_SWAPI_URL}/vehicles/?page=${page}`)
                 .then((res) => {
-                   const response = [...previousArray,...res.data.results]
+                    const response = [...previousArray, ...res.data.results]
                     if (res.data.next) {
                         page++
                         return vehicle(page, response)
@@ -34,14 +34,14 @@ const VehiclesCard = () => {
     }
 
     const getVehiclesResult = getVehicles.slice(offset, offset + PER_PAGE).map((data, index) => {
-        if(data.name.match)
-        return <Center key={index}>
-            <Link href={`/vehicles/${encodeURIComponent(data.name)}`}>
-                <Button w='80%' h="100px" borderWidth='1px' borderRadius='lg' colorScheme="yellow" >
-                    {data.name}
-                </Button>
-            </Link>
-        </Center>
+        if (data.name.match)
+            return <Center key={index}>
+                <Link href={`/vehicles/${encodeURIComponent(data.name)}`}>
+                    <Button w='80%' h="100px" borderWidth='1px' borderRadius='lg' colorScheme="yellow" >
+                        {data.name}
+                    </Button>
+                </Link>
+            </Center>
     })
     return (
         <>

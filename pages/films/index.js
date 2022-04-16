@@ -12,7 +12,7 @@ const Films = () => {
                     Select a Film to find out more!
                 </InstructionText>
                 <FilmsCard />
-                <BackButton backTo={"welcome"}/>
+                <BackButton backTo={"welcome"} />
             </Body>
         </>
     )

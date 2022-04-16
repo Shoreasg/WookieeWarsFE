@@ -29,7 +29,7 @@ const Planets = () => {
             <Header Loggedin={true} />
             <Body>
                 <PlanetDetails planetDetails={getPlanetsDetails} />
-                <BackButton backTo={"planets"}/>
+                <BackButton backTo={"planets"} />
             </Body>
 
         </>

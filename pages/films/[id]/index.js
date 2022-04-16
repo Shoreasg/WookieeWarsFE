@@ -29,7 +29,7 @@ const Film = () => {
             <Header Loggedin={true} />
             <Body>
                 <FilmDetails filmDetails={getFilmDetails} />
-                <BackButton backTo={"films"}/>
+                <BackButton backTo={"films"} />
             </Body>
 
         </>

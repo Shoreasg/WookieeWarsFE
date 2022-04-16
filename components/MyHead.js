@@ -6,7 +6,7 @@ const MyHead = () => {
         <Head>
             <title>WookieWars</title>
             <meta name="description" content="Everything about StarWars" />
-            <link rel="icon" href="/favicon.ico" />
+            <link rel="icon" href="/starwars.png" />
         </Head>
     )
 }

@@ -4,12 +4,11 @@ import { useRouter } from "next/router";
 
 
 
-const BackButton = ({backTo}) => {
+const BackButton = ({ backTo }) => {
     const router = useRouter();
-    const handleBackButton = () =>
-{
-    router.push(`/${backTo}`)
-}
+    const handleBackButton = () => {
+        router.push(`/${backTo}`)
+    }
 
     return (<Center>
         <Box mt="10">

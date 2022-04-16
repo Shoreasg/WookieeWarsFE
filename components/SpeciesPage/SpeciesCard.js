@@ -18,7 +18,7 @@ const SpeciesCard = () => {
         const species = (page = 1, previousArray = []) => {
             axios.get(`${process.env.NEXT_PUBLIC_SWAPI_URL}/species/?page=${page}`)
                 .then((res) => {
-                   const response = [...previousArray,...res.data.results]
+                    const response = [...previousArray, ...res.data.results]
                     if (res.data.next) {
                         page++
                         return species(page, response)
