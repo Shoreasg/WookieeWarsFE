@@ -21,7 +21,7 @@ const Person = () => {
                 })
         }
         getPeople()
-    }, []);
+    }, [id]);
 
 
     return (
