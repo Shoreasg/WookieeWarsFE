@@ -29,7 +29,7 @@ const Person = () => {
             <Header Loggedin={true} />
             <Body>
                 <PeopleDetails peopleDetails={getPeopleDetails} />
-                <BackButton backTo={"people"}/>
+                <BackButton backTo={"people"} />
             </Body>
 
         </>

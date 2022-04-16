@@ -1,34 +1,112 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# WookieWars
 
-## Getting Started
+## Demo Links
+[Frontend](https://wookiee-wars-fe.vercel.app/)
 
-First, run the development server:
+[Backend](https://wookiewarsbe.herokuapp.com/)
 
-```bash
-npm run dev
-# or
-yarn dev
+
+## Repositories
+[Frontend Repo](https://github.com/Shoreasg/WookieeWarsFE)
+
+[Backend Repo](https://github.com/Shoreasg/WookieWarsBE)
+
+
+# Introduction
+
+This was an assignment by Ethlas. Task was to use 1 of the API that they given and create an app using NextJs.
+I have choose the StarWars API aka [SWAPI](https://swapi.dev/documentation).
+
+I realized that not a lot of people knew about StarWars so i have decided to use this API and create an app where users can find out more information of the characters, flims and vehicles
+
+
+
+# Features:
+
+- User is able to login using a dummy account (Username:test Password: test)
+- User is able to select up to 6 different categories
+
+
+
+# Screenshots:
+
+## Login Page
+
+![Login Page](https://raw.githubusercontent.com/Shoreasg/StreamVerse_FrontEnd/main/screenshots/Login_Page.JPG)
+
+## Category Page
+
+![Category Page](https://raw.githubusercontent.com/Shoreasg/StreamVerse_FrontEnd/main/screenshots/FAQ_Page.JPG)
+
+## Choose a Character/Films Page
+
+![Choose](https://raw.githubusercontent.com/Shoreasg/StreamVerse_FrontEnd/main/screenshots/Home_Page.JPG)
+
+## Details Page
+
+
+![Details Page](https://raw.githubusercontent.com/Shoreasg/StreamVerse_FrontEnd/main/screenshots/Admin_Page.JPG)
+
+# Technologies used
+
+
+## FrontEnd
+- [NextJs](https://nextjs.org/)
+- [Chakra-UI](https://chakra-ui.com/)
+- [BootStrap-CSS](https://getbootstrap.com/)
+
+
+## BackEnd
+- [Node.js](https://nodejs.org/en/)
+- [Express](http://expressjs.com/)
+- [Mongoose](https://mongoosejs.com/)
+
+## Node Modules used
+- [axios](https://axios-http.com/)
+- [React-Hook-Form](https://react-hook-form.com/)
+- [React-Paginate](https://github.com/AdeleD/react-paginate)
+- [nodemon](https://nodemon.io/)
+- [express-session](https://github.com/expressjs/session)
+- [passport-local](http://www.passportjs.org/)
+- [passport-local-mongoose](https://github.com/saintedlama/passport-local-mongoose)
+- [cors](https://github.com/expressjs/cors)
+
+
+
+# Known Issues
+- Session cookie is not generated when user login
+- No authentication for routes.
+- App doesn't support some screensize. Best on PC.
+
+
+# Reflection
+
+I started on 15/4/2022 as it is Good Firday. Started off with doing basic mockups and research on next js. Decided to work on backend as there isn't really a requirement to do backend. However, after setting up, i realized that i am able to login, however, the cookie isn't generated. I still have to research if this is related to passport local or NextJs works differently from React. Continue working on the routes and started to setup the layout.
+
+Saturday, i decided to focus on the frontend. Was really a recap for me as i haven't touch Javascript for 2 months. 
+
+I really like how NextJS is designed. Previously in React, i have to use React Router, however there is router here that is set up for you which makes things pretty easy. However, i realized that i haven't really use a lot of NextJs features as it requires me to play around to understand the features well. This is also my first time using Chakra UI as a framework. Chakra UI was pretty straight forward. I like how they design their styling and their components. I might use it again in the future.
+
+Overall,I managae to complete the assignment and i'm very happy that i was given the chance to do this. This is the first techincal take home assignment in my carrer. Whatever the outcome is, i really did learn from it.
+
+
+
+
+# Setup
+
+To run this project, install it locally using npm:
+
+```
+$ git clone
+$ npm i
+$ npm start
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Contributors
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
+[Shoreasg](https://github.com/Shoreasg) 
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

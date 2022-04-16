@@ -1,6 +1,6 @@
 import { Box } from '@chakra-ui/react'
 
-const Body = ({children}) => {
+const Body = ({ children }) => {
     return (
         <Box bg='black' h='100vh' color='gold' >
             {children}
