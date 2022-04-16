@@ -51,7 +51,6 @@ const CategoryCards = () => {
                     </Center>
                 </SimpleGrid>
             </Box>
-
         </Center>
     )
 }

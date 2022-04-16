@@ -1,7 +1,7 @@
 import Body from "../components/Layout/Body"
 import CategoryCards from "../components/WelcomePage/CategoryCards"
 import Header from "../components/Layout/Header"
-import InstructionText from "../components/Layout/InstructionText"
+import InstructionText from "../components/InstructionText"
 
 const Welcome = () => {
     return (

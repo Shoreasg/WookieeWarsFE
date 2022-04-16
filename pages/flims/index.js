@@ -1,7 +1,8 @@
 import FlimsCard from "../../components/FlimsPage/FlimsCard"
 import Body from "../../components/Layout/Body"
 import Header from "../../components/Layout/Header"
-import InstructionText from "../../components/Layout/InstructionText"
+import InstructionText from "../../components/InstructionText"
+import BackButton from "../../components/BackButton"
 const Flims = () => {
     return (
         <>
@@ -10,7 +11,8 @@ const Flims = () => {
                 <InstructionText>
                     Select a Flim to find out more!
                 </InstructionText>
-                <FlimsCard/>
+                <FlimsCard />
+                <BackButton backTo={"welcome"}/>
             </Body>
         </>
     )

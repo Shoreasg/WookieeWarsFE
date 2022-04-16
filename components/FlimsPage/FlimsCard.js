@@ -1,22 +1,77 @@
+import { Box, Button, Center, SimpleGrid } from "@chakra-ui/react";
+import 'bootstrap/dist/css/bootstrap.css'
 import axios from "axios";
 import { useEffect, useState } from "react"
+import ReactPaginate from "react-paginate";
+import Link from "next/link"
 
-const FlimsCard = () =>
-{
+
+
+const FlimsCard = () => {
     const [getFlims, setGetFlims] = useState([]);
+    const [currentPage, setCurrentPage] = useState(0);
+    const PER_PAGE = 4;
+    const offset = currentPage * PER_PAGE;
+    const pageCount = Math.ceil(getFlims.length / PER_PAGE);
+
     useEffect(() => {
-      const flims =  () =>
-      {
-           axios.get(`${process.env.NEXT_PUBLIC_SWAPI_URL}/films/`)
-           .then((res)=>
-           {
-               console.log(res.data.results)
-           })
-      }
-      flims()
+        const flims = () => {
+            axios.get(`${process.env.NEXT_PUBLIC_SWAPI_URL}/films/`)
+                .then((res) => {
+                    setGetFlims(res.data.results)
+                })
+        }
+        flims()
     }, []);
-    return(
-        <h1>Hello</h1>
+
+    console.log(getFlims);
+    const handlePageClick = ({ selected: selectedPage }) => {
+        setCurrentPage(selectedPage)
+    }
+
+
+    const getFlimsResult = getFlims.slice(offset, offset + PER_PAGE).map((data, index) => {
+        return <Center>
+            <Link href={`/flims/${data.title}`}>
+                <Button w='80%' h="100px" borderWidth='1px' borderRadius='lg' colorScheme="yellow" key={index}>
+                    {data.title}
+                </Button>
+            </Link>
+        </Center>
+    })
+
+
+
+    return (
+        <>
+            <Center>
+                <Box w="80vh" >
+                    <SimpleGrid columns={2} spacing={10} textAlign="center">
+                        {getFlimsResult}
+                    </SimpleGrid>
+                </Box>
+            </Center >
+            <Center mt="20" bg="black">
+                <ReactPaginate
+                    nextLabel="next >"
+                    onPageChange={handlePageClick}
+                    pageCount={pageCount}
+                    previousLabel="< previous"
+                    pageRangeDisplayed={5}
+                    renderOnZeroPageCount={null}
+                    breakClassName={'page-item'}
+                    breakLinkClassName={'page-link'}
+                    containerClassName={'pagination'}
+                    pageClassName={'page-item'}
+                    pageLinkClassName={'page-link'}
+                    previousClassName={'page-item'}
+                    previousLinkClassName={'page-link'}
+                    nextClassName={'page-item'}
+                    nextLinkClassName={'page-link'}
+                    activeClassName={'active'}
+                />
+            </Center>
+        </>
     )
 }
 
