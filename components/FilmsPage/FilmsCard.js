@@ -31,8 +31,8 @@ const FilmsCard = () => {
 
     const getFilmsResult = getFiims.slice(offset, offset + PER_PAGE).map((data, index) => {
         return <Center>
-            <Link href={`/films/${data.title}`}>
-                <Button w='80%' h="100px" borderWidth='1px' borderRadius='lg' colorScheme="yellow" key={index}>
+            <Link href={`/films/${data.title}`}key={index}>
+                <Button w='80%' h="100px" borderWidth='1px' borderRadius='lg' colorScheme="yellow" >
                     {data.title}
                 </Button>
             </Link>
