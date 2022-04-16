@@ -21,7 +21,7 @@ const Planets = () => {
                 })
         }
         getPlanets()
-    }, []);
+    }, [id]);
 
 
     return (
