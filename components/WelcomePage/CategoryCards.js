@@ -8,9 +8,9 @@ const CategoryCards = () => {
             <Box w="80vh" >
                 <SimpleGrid columns={2} spacing={10} textAlign="center">
                     <Center>
-                        <Link href="/flims">
+                        <Link href="/films">
                             <Button w='80%' h="100px" borderWidth='1px' borderRadius='lg' colorScheme="yellow">
-                                Flims
+                                Films
                             </Button>
                         </Link>
                     </Center>
@@ -51,7 +51,6 @@ const CategoryCards = () => {
                     </Center>
                 </SimpleGrid>
             </Box>
-
         </Center>
     )
 }

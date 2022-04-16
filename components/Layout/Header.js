@@ -1,6 +1,5 @@
 import { Box, Button, Flex, useToast } from '@chakra-ui/react'
 import axios from 'axios'
-import Link from 'next/link'
 import { useRouter } from "next/router";
 
 const Header = (children) => {
@@ -40,13 +39,17 @@ const Header = (children) => {
       })
   }
 
+  const handleRedirectHome = () => {
+    router.push('/welcome');
+  }
+
   return (
     <>
       {children.Loggedin ? <Flex>
         <Box bg='black' w='100%' textAlign={"left"} border='1px' color='Gold' borderRight="0px" borderTop="0px">
-          <Link href="/welcome">
+          <Button variant='link' color="gold" onClick={handleRedirectHome}>
             Home
-          </Link>
+          </Button>
         </Box>
         <Box bg='black' w='100%' textAlign={"center"} color='Gold' border='1px' borderLeft="0px" borderRight="0px" borderTop="0px">
           WookieWars
