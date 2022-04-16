@@ -15,10 +15,15 @@ const PlanetCard = () => {
     const pageCount = Math.ceil(getPlanet.length / PER_PAGE);
 
     useEffect(() => {
-        const planet = () => {
-            axios.get(`${process.env.NEXT_PUBLIC_SWAPI_URL}/planets/`)
+        const planet = (page = 1, previousArray = []) => {
+            axios.get(`${process.env.NEXT_PUBLIC_SWAPI_URL}/planets/?page=${page}`)
                 .then((res) => {
-                    setGetPlanet(res.data.results)
+                   const response = [...previousArray,...res.data.results]
+                    if (res.data.next) {
+                        page++
+                        return planet(page, response)
+                    }
+                    return setGetPlanet(response);
                 })
         }
         planet()
@@ -30,7 +35,7 @@ const PlanetCard = () => {
 
     const getPlanetResult = getPlanet.slice(offset, offset + PER_PAGE).map((data, index) => {
         return <Center key={index}>
-            <Link href={`/planets/${data.name}`}>
+            <Link href={`/planets/${encodeURIComponent(data.name)}`}>
                 <Button w='80%' h="100px" borderWidth='1px' borderRadius='lg' colorScheme="yellow" >
                     {data.name}
                 </Button>

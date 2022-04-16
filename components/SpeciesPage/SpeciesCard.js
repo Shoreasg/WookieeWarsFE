@@ -15,10 +15,15 @@ const SpeciesCard = () => {
     const pageCount = Math.ceil(getSpecies.length / PER_PAGE);
 
     useEffect(() => {
-        const species = () => {
-            axios.get(`${process.env.NEXT_PUBLIC_SWAPI_URL}/species/`)
+        const species = (page = 1, previousArray = []) => {
+            axios.get(`${process.env.NEXT_PUBLIC_SWAPI_URL}/species/?page=${page}`)
                 .then((res) => {
-                    setGetSpecies(res.data.results)
+                   const response = [...previousArray,...res.data.results]
+                    if (res.data.next) {
+                        page++
+                        return species(page, response)
+                    }
+                    return setGetSpecies(response);
                 })
         }
         species()
@@ -30,7 +35,7 @@ const SpeciesCard = () => {
 
     const getSpeciesResult = getSpecies.slice(offset, offset + PER_PAGE).map((data, index) => {
         return <Center key={index}>
-            <Link href={`/species/${data.name}`}>
+            <Link href={`/species/${encodeURIComponent(data.name)}`}>
                 <Button w='80%' h="100px" borderWidth='1px' borderRadius='lg' colorScheme="yellow" >
                     {data.name}
                 </Button>

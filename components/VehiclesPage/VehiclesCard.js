@@ -15,10 +15,15 @@ const VehiclesCard = () => {
     const pageCount = Math.ceil(getVehicles.length / PER_PAGE);
 
     useEffect(() => {
-        const vehicle = () => {
-            axios.get(`${process.env.NEXT_PUBLIC_SWAPI_URL}/vehicles/`)
+        const vehicle = (page = 1, previousArray = []) => {
+            axios.get(`${process.env.NEXT_PUBLIC_SWAPI_URL}/vehicles/?page=${page}`)
                 .then((res) => {
-                    setGetVehicles(res.data.results)
+                   const response = [...previousArray,...res.data.results]
+                    if (res.data.next) {
+                        page++
+                        return vehicle(page, response)
+                    }
+                    return setGetVehicles(response);
                 })
         }
         vehicle()
@@ -29,8 +34,9 @@ const VehiclesCard = () => {
     }
 
     const getVehiclesResult = getVehicles.slice(offset, offset + PER_PAGE).map((data, index) => {
+        if(data.name.match)
         return <Center key={index}>
-            <Link href={`/vehicles/${data.name == "TIE/LN starfighter" ? "LN starfighter" : data.name}`}>
+            <Link href={`/vehicles/${encodeURIComponent(data.name)}`}>
                 <Button w='80%' h="100px" borderWidth='1px' borderRadius='lg' colorScheme="yellow" >
                     {data.name}
                 </Button>
