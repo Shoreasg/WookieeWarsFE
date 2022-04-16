@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import Body from "../../../components/Layout/Body"
 import Header from "../../../components/Layout/Header"
 import BackButton from "../../../components/BackButton"
-import StarShipsDetails from "../../../components/StarShipsPage/StarShipDetails"
+import StarShipDetails from "../../../components/StarShipsPage/StarShipDetails"
 
 const StarShip = () => {
     const [getStarShipDetails, setGetStarShipDetails] = useState([]);
@@ -26,7 +26,7 @@ const StarShip = () => {
         <>
             <Header Loggedin={true} />
             <Body>
-                <StarShipsDetails StarShipDetails={getStarShipDetails} />
+                <StarShipDetails StarShipDetails={getStarShipDetails} />
                 <BackButton backTo={"starships"} />
             </Body>
 
