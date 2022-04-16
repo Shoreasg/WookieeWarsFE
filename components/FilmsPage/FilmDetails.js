@@ -1,9 +1,8 @@
 
 import { Box, Center, Text } from "@chakra-ui/react";
-const FlimDetails = ({ flimDetails }) => {
-    console.log(flimDetails)
+const FilmDetails = ({ filmDetails }) => {
 
-    const details = flimDetails.map((data) => {
+    const details = filmDetails.map((data) => {
         return (
             <>
                 <Text fontSize="2xl">
@@ -39,4 +38,4 @@ const FlimDetails = ({ flimDetails }) => {
     )
 }
 
-export default FlimDetails
+export default FilmDetails

@@ -1,21 +1,21 @@
-import FlimsCard from "../../components/FlimsPage/FlimsCard"
+import FilmsCard from "../../components/FilmsPage/FilmsCard"
 import Body from "../../components/Layout/Body"
 import Header from "../../components/Layout/Header"
 import InstructionText from "../../components/InstructionText"
 import BackButton from "../../components/BackButton"
-const Flims = () => {
+const Films = () => {
     return (
         <>
             <Header Loggedin={true} />
             <Body>
                 <InstructionText>
-                    Select a Flim to find out more!
+                    Select a Film to find out more!
                 </InstructionText>
-                <FlimsCard />
+                <FilmsCard />
                 <BackButton backTo={"welcome"}/>
             </Body>
         </>
     )
 }
 
-export default Flims
+export default Films

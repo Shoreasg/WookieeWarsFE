@@ -3,24 +3,24 @@ import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import Body from "../../../components/Layout/Body"
 import Header from "../../../components/Layout/Header"
-import FlimDetails from "../../../components/FlimsPage/FlimDetails"
+import FilmDetails from "../../../components/FilmsPage/FilmDetails"
 import BackButton from "../../../components/BackButton"
 
-const Flim = () => {
-    const [getFlimDetails, setGetFlimDetails] = useState([]);
+const Film = () => {
+    const [getFilmDetails, setGetFilmDetails] = useState([]);
     const router = useRouter()
     const { id } = router.query
 
     useEffect(() => {
-        const getFlim = () => {
+        const getFilm = () => {
             axios.get(`${process.env.NEXT_PUBLIC_SWAPI_URL}/films/?search=${id}`)
                 .then((res) => {
 
-                    setGetFlimDetails(res.data.results)
+                    setGetFilmDetails(res.data.results)
 
                 })
         }
-        getFlim()
+        getFilm()
     }, []);
 
 
@@ -28,12 +28,12 @@ const Flim = () => {
         <>
             <Header Loggedin={true} />
             <Body>
-                <FlimDetails flimDetails={getFlimDetails} />
-                <BackButton backTo={"flims"}/>
+                <FilmDetails filmDetails={getFilmDetails} />
+                <BackButton backTo={"films"}/>
             </Body>
 
         </>
     )
 }
 
-export default Flim
+export default Film

@@ -1,6 +1,5 @@
 import { Box, Button, Flex, useToast } from '@chakra-ui/react'
 import axios from 'axios'
-import Link from 'next/link'
 import { useRouter } from "next/router";
 
 const Header = (children) => {

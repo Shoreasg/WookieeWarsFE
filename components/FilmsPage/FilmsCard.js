@@ -7,32 +7,31 @@ import Link from "next/link"
 
 
 
-const FlimsCard = () => {
-    const [getFlims, setGetFlims] = useState([]);
+const FilmsCard = () => {
+    const [getFiims, setGetFilms] = useState([]);
     const [currentPage, setCurrentPage] = useState(0);
     const PER_PAGE = 4;
     const offset = currentPage * PER_PAGE;
-    const pageCount = Math.ceil(getFlims.length / PER_PAGE);
+    const pageCount = Math.ceil(getFiims.length / PER_PAGE);
 
     useEffect(() => {
-        const flims = () => {
+        const films = () => {
             axios.get(`${process.env.NEXT_PUBLIC_SWAPI_URL}/films/`)
                 .then((res) => {
-                    setGetFlims(res.data.results)
+                    setGetFilms(res.data.results)
                 })
         }
-        flims()
+        films()
     }, []);
 
-    console.log(getFlims);
     const handlePageClick = ({ selected: selectedPage }) => {
         setCurrentPage(selectedPage)
     }
 
 
-    const getFlimsResult = getFlims.slice(offset, offset + PER_PAGE).map((data, index) => {
+    const getFilmsResult = getFiims.slice(offset, offset + PER_PAGE).map((data, index) => {
         return <Center>
-            <Link href={`/flims/${data.title}`}>
+            <Link href={`/films/${data.title}`}>
                 <Button w='80%' h="100px" borderWidth='1px' borderRadius='lg' colorScheme="yellow" key={index}>
                     {data.title}
                 </Button>
@@ -47,7 +46,7 @@ const FlimsCard = () => {
             <Center>
                 <Box w="80vh" >
                     <SimpleGrid columns={2} spacing={10} textAlign="center">
-                        {getFlimsResult}
+                        {getFilmsResult}
                     </SimpleGrid>
                 </Box>
             </Center >
@@ -75,4 +74,4 @@ const FlimsCard = () => {
     )
 }
 
-export default FlimsCard
+export default FilmsCard
