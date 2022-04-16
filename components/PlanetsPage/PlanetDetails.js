@@ -1,33 +1,36 @@
 
 import { Box, Center, Text } from "@chakra-ui/react";
-const PeopleDetails = ({ peopleDetails }) => {
-
-    const details = peopleDetails.map((data) => {
+const PlanetDetails = ({ planetDetails }) => {
+    const details = planetDetails.map((data, index) => {
         return (
-            <>
-                <Text fontSize="2xl">
+
+            <Box key={index}>
+                <Text fontSize="2xl" >
                     Name: {data.name}
                 </Text>
                 <Text fontSize="xl">
-                    Gender: {data.gender}
+                    Diameter: {data.diamter} KM
                 </Text>
                 <Text fontSize="xl">
-                    Birth Year: {data.birth_year}
+                    Rotation Period: {data.rotation_period}
                 </Text>
                 <Text fontSize="xl">
-                    Eye Color: {data.eye_color}
+                    Gravity: {data.gravity}
                 </Text>
                 <Text fontSize="xl">
-                    Height: {data.height} CM
+                    Population: {data.population}
                 </Text>
                 <Text fontSize="xl">
-                    Skin Color: {data.skin_color}
+                    Climate: {data.climate}
                 </Text>
                 <Text fontSize="xl">
-                    Mass: {data.mass} KG
+                    Terrain: {data.terrain}
                 </Text>
+                <Text fontSize="xl">
+                    Water Percentage: {data.surface_water}%
+                </Text>
+            </Box>
 
-            </>
         )
     })
 
@@ -41,4 +44,4 @@ const PeopleDetails = ({ peopleDetails }) => {
     )
 }
 
-export default PeopleDetails
+export default PlanetDetails
