@@ -7,18 +7,20 @@ import BackButton from "../../../components/BackButton"
 import StarShipDetails from "../../../components/StarShipsPage/StarShipDetails"
 
 const StarShip = () => {
-    const [getStarShipDetails, setGetStarShipDetails] = useState([]);
+    const [getStarShipsDetails, setGetStarShipsDetails] = useState([]);
     const router = useRouter()
     const { id } = router.query
 
     useEffect(() => {
-        const getStarShip = () => {
+        const getStarShips = () => {
             axios.get(`${process.env.NEXT_PUBLIC_SWAPI_URL}/starships/?search=${id}`)
                 .then((res) => {
-                    setGetStarShipDetails(res.data.results)
+
+                    setGetStarShipsDetails(res.data.results)
+
                 })
         }
-        getStarShip()
+        getStarShips()
     }, [id]);
 
 
@@ -26,8 +28,8 @@ const StarShip = () => {
         <>
             <Header Loggedin={true} />
             <Body>
-                <StarShipDetails starShipDetails={getStarShipDetails} />
-                <BackButton backTo={"starships"} />
+                <StarShipDetails starShipDetails={getStarShipsDetails} />
+                <BackButton backTo={"starships"}/>
             </Body>
 
         </>
