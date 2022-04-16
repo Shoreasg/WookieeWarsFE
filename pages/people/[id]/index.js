@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import Body from "../../../components/Layout/Body"
 import Header from "../../../components/Layout/Header"
 import BackButton from "../../../components/BackButton"
-import PeopleDetails from "../../../components/PeoplePage/PeopleDetails"
+import PeopleDetails from "../../../components/PeoplePage/PersonDetails"
 
 const Person = () => {
     const [getPeopleDetails, setGetPeopleDetails] = useState([]);
