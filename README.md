@@ -30,22 +30,26 @@ I realized that not a lot of people knew about StarWars so i have decided to use
 
 # Screenshots:
 
+## Mockup
+![Mockup](https://raw.githubusercontent.com/Shoreasg/WookieeWarsFE/main/Screenshots/msg312288392-224573.jpg?token=GHSAT0AAAAAABTANYCGBQ3UIR6TXK7ZJQXUYS2YV5A)
 ## Login Page
 
-![Login Page](https://raw.githubusercontent.com/Shoreasg/StreamVerse_FrontEnd/main/screenshots/Login_Page.JPG)
+![Login Page](https://raw.githubusercontent.com/Shoreasg/WookieeWarsFE/main/Screenshots/Login.JPG?token=GHSAT0AAAAAABTANYCHMKXFLD2UQDQYUPFAYS2YVLA)
 
 ## Category Page
 
-![Category Page](https://raw.githubusercontent.com/Shoreasg/StreamVerse_FrontEnd/main/screenshots/FAQ_Page.JPG)
+![Category Page](https://raw.githubusercontent.com/Shoreasg/WookieeWarsFE/main/Screenshots/Category.JPG?token=GHSAT0AAAAAABTANYCGAE7WMN6ATEXBZ7JUYS2YUIQ)
 
 ## Choose a Character/Films Page
 
-![Choose](https://raw.githubusercontent.com/Shoreasg/StreamVerse_FrontEnd/main/screenshots/Home_Page.JPG)
+![Choose](https://raw.githubusercontent.com/Shoreasg/WookieeWarsFE/main/Screenshots/Choose.JPG?token=GHSAT0AAAAAABTANYCHM2DVBCQCCGNL5XDAYS2YU5Q)
 
 ## Details Page
 
 
-![Details Page](https://raw.githubusercontent.com/Shoreasg/StreamVerse_FrontEnd/main/screenshots/Admin_Page.JPG)
+![Details Page](https://raw.githubusercontent.com/Shoreasg/WookieeWarsFE/main/Screenshots/Details.JPG?token=GHSAT0AAAAAABTANYCH3QN7J4L5P7PBDD4EYS2YVEA)
+
+
 
 # Technologies used
 
