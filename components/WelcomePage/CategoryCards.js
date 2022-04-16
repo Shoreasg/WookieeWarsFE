@@ -5,7 +5,7 @@ import Link from "next/link"
 const CategoryCards = () => {
     return (
         <Center>
-            <Box w="80vh" >
+            <Box w={["80vh"]} mt={["-30","-30","-10"]}>
                 <SimpleGrid columns={2} spacing={10} textAlign="center">
                     <Center>
                         <Link href="/films">

@@ -1,4 +1,4 @@
-import { Box, Button, Center, SimpleGrid } from "@chakra-ui/react";
+import { Box, Button, Center, SimpleGrid, Text } from "@chakra-ui/react";
 import 'bootstrap/dist/css/bootstrap.css'
 import axios from "axios";
 import { useEffect, useState } from "react"
@@ -33,7 +33,10 @@ const FilmsCard = () => {
         return <Center key={index}>
             <Link href={`/films/${data.title}`}>
                 <Button w='80%' h="100px" borderWidth='1px' borderRadius='lg' colorScheme="yellow" >
-                    {data.title}
+                    <Text fontSize={["xs",null,"sm"]}>
+                        {data.title}
+                    </Text>
+
                 </Button>
             </Link>
         </Center>
@@ -44,7 +47,7 @@ const FilmsCard = () => {
     return (
         <>
             <Center>
-                <Box w="80vh" >
+                <Box w="80vh" mt={[-10,-10]}>
                     <SimpleGrid columns={2} spacing={10} textAlign="center">
                         {getFilmsResult}
                     </SimpleGrid>

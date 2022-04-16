@@ -12,13 +12,13 @@ const PeopleCard = () => {
     const [currentPage, setCurrentPage] = useState(0);
     const PER_PAGE = 4;
     const offset = currentPage * PER_PAGE;
-    const pageCount = Math.ceil(getPeople.length / PER_PAGE);
+    const pageCount = Math.ceil(getPeople.length / 4);
 
     useEffect(() => {
         const people = (page = 1, previousArray = []) => {
             axios.get(`${process.env.NEXT_PUBLIC_SWAPI_URL}/people/?page=${page}`)
                 .then((res) => {
-                   const response = [...previousArray,...res.data.results]
+                    const response = [...previousArray, ...res.data.results]
                     if (res.data.next) {
                         page++
                         return people(page, response)
